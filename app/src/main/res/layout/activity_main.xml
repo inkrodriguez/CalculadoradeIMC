@@ -119,5 +119,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPeso" />
 
+    <TextView
+        android:id="@+id/tvClassificacao"
+        android:layout_width="365dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imc" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
