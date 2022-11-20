@@ -25,15 +25,12 @@ class MainActivity : AppCompatActivity() {
         val classificacao = findViewById<TextView>(R.id.tvClassificacao)
 
         botao.setOnClickListener {
-            val editAltura = altura.text.toString().toFloat()
-            val editPeso = peso.text.toString().toFloat()
+            val altura2 = altura.text.toString().toFloat()
+            val peso2 = peso.text.toString().toFloat()
+            val calculo = peso2 / (altura2*altura2)
+            val novoResultado = DecimalFormat("#.##").format(calculo)
 
-            val calculo = editPeso / (editAltura*editAltura)
-
-            val decimal = DecimalFormat(".00")
-            val calculoFormatado = decimal.format(calculo)
-
-            resultado.text = calculoFormatado.toString()
+            resultado.text = novoResultado
 
             if (calculo <= 18.5) {
                 classificacao.text = "Você está abaixo do peso."
@@ -46,13 +43,13 @@ class MainActivity : AppCompatActivity() {
             }
             else if (calculo >= 30.0 && calculo <= 34.9){
                 classificacao.text = "Você está com obesidade grau 1"
-            }
+           }
             else if (calculo >= 35.0 && calculo <= 39.9){
                 classificacao.text = "Você está com obesidade grau 2"
-            }
+           }
             else if (calculo >= 40.0){
                 classificacao.text = "Você está com obesidade grau 3"
-            }
+           }
         }
 
         btnLimpar.setOnClickListener{
