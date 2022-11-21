@@ -35,16 +35,16 @@ class MainActivity : AppCompatActivity() {
             if (calculo <= 18.5) {
                 classificacao.text = "Você está abaixo do peso."
             }
-            else if (calculo >= 18.6 && calculo <= 24.9){
+            else if (calculo in 18.6..24.9){
                 classificacao.text = "Você está no peso ideal, parabéns!"
             }
-            else if (calculo >= 25.0 && calculo <= 29.9){
+            else if (calculo in 25.0..29.9){
                 classificacao.text = "Você está levemente acima do peso."
             }
-            else if (calculo >= 30.0 && calculo <= 34.9){
+            else if (calculo in 30.0..34.9){
                 classificacao.text = "Você está com obesidade grau 1"
            }
-            else if (calculo >= 35.0 && calculo <= 39.9){
+            else if (calculo in 35.0..39.9){
                 classificacao.text = "Você está com obesidade grau 2"
            }
             else if (calculo >= 40.0){
