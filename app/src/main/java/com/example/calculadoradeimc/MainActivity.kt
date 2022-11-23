@@ -32,24 +32,18 @@ class MainActivity : AppCompatActivity() {
 
             resultado.text = novoResultado
 
-            if (calculo <= 18.5) {
-                classificacao.text = "Você está abaixo do peso."
+            fun calcular(calculo:Float): String {
+                return when (calculo){
+                    in 0.01..18.5 -> "Você está abaixo do peso ideal"
+                    in 18.6..24.9 -> "Você está no peso ideal"
+                    in 25.0..29.9 -> "Você está acima do peso ideal"
+                    in 30.0..34.9 -> "Você está com obesidade Grau 1"
+                    in 35.0..39.9 -> "Você está com obesidade Grau 2"
+                    in 40.0..1000.0 -> "Você está com obesidade Grau 3 ou mórbida"
+                    else -> ""
+                }
             }
-            else if (calculo in 18.6..24.9){
-                classificacao.text = "Você está no peso ideal, parabéns!"
-            }
-            else if (calculo in 25.0..29.9){
-                classificacao.text = "Você está levemente acima do peso."
-            }
-            else if (calculo in 30.0..34.9){
-                classificacao.text = "Você está com obesidade grau 1"
-           }
-            else if (calculo in 35.0..39.9){
-                classificacao.text = "Você está com obesidade grau 2"
-           }
-            else if (calculo >= 40.0){
-                classificacao.text = "Você está com obesidade grau 3"
-           }
+            classificacao.text = calcular(calculo)
         }
 
         btnLimpar.setOnClickListener{
@@ -57,8 +51,6 @@ class MainActivity : AppCompatActivity() {
              peso.text.clear()
              resultado.text = ""
              classificacao.text = ""
-
         }
-
     }
 }
